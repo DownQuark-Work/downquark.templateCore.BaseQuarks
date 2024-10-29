@@ -1,1 +1,1 @@
-# methods called from `../arguments.py`
+"""methods called from `../arguments.py`"""
