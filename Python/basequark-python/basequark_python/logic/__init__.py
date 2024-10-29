@@ -3,9 +3,10 @@ The application's core codebase
 
 This directory will be drastically different for each project.
 
-# Leaning towards the hexagonal pattern here
+# Currently, only the `hexagonal pattern`has been stubbed.
+# Others can be created as desired - leaving below list of references
 
-The following is a list of patterns that will more than likely be used in multiple projects, and therefore we are keeping a quick reference.
+> The following is a list of patterns that will more than likely be used in multiple projects, and therefore we are keeping a quick reference.
 
 # https://github.com/faif/python-patterns/blob/master/patterns/behavioral/chaining_method.py <- method1(0).do_method_two(2).and_another_method().do_method_two(22)
 #### non-GOF
