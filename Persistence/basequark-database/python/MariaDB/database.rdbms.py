@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector.abstracts import MySQLConnectionAbstract
 
-cnxn: MySQLConnectionAbstract = None
+cnxn: MySQLConnectionAbstract | None = None
 crsr = None
 
 database_connection_cursor = [cnxn, crsr]
