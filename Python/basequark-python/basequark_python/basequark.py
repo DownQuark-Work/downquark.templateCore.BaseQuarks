@@ -3,7 +3,7 @@ High Level description of the application.
 Description of what the `run` command instantantiates
 """
 
-from .interfaces.inputs import arguments
+from .actions.triggers import arguments
 
 
 class BaseQuark:

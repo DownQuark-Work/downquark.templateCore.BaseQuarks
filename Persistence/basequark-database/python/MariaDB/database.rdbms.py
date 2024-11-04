@@ -1,14 +1,16 @@
 import mysql.connector
 from mysql.connector.abstracts import MySQLConnectionAbstract
 
-cnxn: MySQLConnectionAbstract = None
+cnxn: MySQLConnectionAbstract | None = None
 crsr = None
 
 database_connection_cursor = [cnxn, crsr]
 
 
 def create_mysql_connection(pw="root"):
-    return mysql.connector.connect(host="localhost", user="root", password=pw, port="3366")
+    return mysql.connector.connect(
+        host="localhost", user="root", password=pw, port="3366"
+    )
 
 
 def dyn_connect_cursor():

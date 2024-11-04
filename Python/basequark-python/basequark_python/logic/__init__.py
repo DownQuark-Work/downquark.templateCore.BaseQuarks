@@ -20,4 +20,6 @@ This directory will be drastically different for each project.
 # https://github.com/faif/python-patterns/blob/master/patterns/behavioral/registry.py
 # https://github.com/faif/python-patterns/blob/master/patterns/behavioral/specification.py
 # https://github.com/faif/python-patterns/blob/master/patterns/structural/composite.py
+
+# https://deviq.com/design-patterns/rules-engine-pattern
 """
