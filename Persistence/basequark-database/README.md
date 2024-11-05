@@ -2,7 +2,27 @@
 
 ## Start Up
 
-1. MariaDB
+> NOTE: this is intentionally ephemeral information.
+> _**DO NOT**_ use for real development. Data will be lost if containers are destroyed.
+
+### Dev Container Start Up
+
+> run `% docker compose up` for now.
+> containers will be forthcoming
+>
+> > note: mariadb is accessible on `3666` - allows for that port as well as `3366` to be developed on
+> > postgres is available on default `5432`
+> > arango is available at: `http://localhost:8529/` or from the _docker terminal_ with `% arangosh`
+
+### Manual Start Up
+
+1. Postgres
+
+```
+docker run -p 5432:5432 --name PostgresDq --hostname=c794b66677c8 --mac-address=02:42:ac:11:00:02 --env=POSTGRES_PASSWORD=D0wnQu@rk! --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/17/bin --env=GOSU_VERSION=1.17 --env=LANG=en_US.utf8 --env=PG_MAJOR=17 --env=PG_VERSION=17.0-1.pgdg120+1 --env=PGDATA=/var/lib/postgresql/data --volume=/var/lib/postgresql/data --network=bridge --restart=no --runtime=runc -d postgres:latest
+```
+
+2. MariaDB
    > shutdown with:
    >
    > > `pkill -f mariadb`
@@ -13,7 +33,7 @@
 
 - `/opt/homebrew/bin/mariadbd-safe --datadir=/opt/homebrew/var/mysql --port 3366`
 
-2. ArangoDB
+3. ArangoDB
 
 `docker run -d -p 8529:8529 -e ARANGO_RANDOM_ROOT_PASSWORD=1 --name arangodb-downquark arangodb`
 
