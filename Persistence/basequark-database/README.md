@@ -71,3 +71,5 @@ For detailed information see downquark knowledge base:
   1. https://university.arangodb.com/courses/coming-from-sql/
   1. https://university.arangodb.com/courses/aql-fundamentals/
   1. https://university.arangodb.com/courses/python-driver-tutorial/
+
+1. https://docs.arangodb.com/3.11/graphs/

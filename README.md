@@ -13,5 +13,6 @@
    1. MariaDB
 1. Python
 1. Rust
+   > https://rust-lang-nursery.github.io/rust-cookbook/intro.html
    1. Native
    1. Tauri
