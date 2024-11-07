@@ -27,6 +27,8 @@
    > - NOTE: These _do **NOT**_ have to be **direct** descendants
 5. _that's_ why we need a graphDB
 
+- good example because the generated card (and their auto-increment `pk`) will have to exist in postgres _before_ the connection can be made in arango
+
 ### Maria
 
 > the aggregate
