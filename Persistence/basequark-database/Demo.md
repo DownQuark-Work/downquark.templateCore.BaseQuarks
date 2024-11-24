@@ -1,4 +1,12 @@
-# POC
+# TODO: dupe template for MockMyDB
+
+> This file is related to that applicaiton only
+>
+> > would be beneficial to have the Python Persistence utils in place before cloning the template.
+>
+> remove file form BaseQuark template repo when the above has occured.
+
+## POC
 
 > Virtual TCG
 

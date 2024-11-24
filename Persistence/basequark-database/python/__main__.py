@@ -1,9 +1,10 @@
-"""E"""
+"""DownQuark Database Utilities"""
 
 from .basequark import BaseQuark
 
 
 def required_before_run():
+    """Initializes and verifies connections to specified database"""
     print("all required data has been retrieved, parsed, and handled")
     print(
         "what we were looking for to make the demo: https://github.com/swyxio/uuid-list"
