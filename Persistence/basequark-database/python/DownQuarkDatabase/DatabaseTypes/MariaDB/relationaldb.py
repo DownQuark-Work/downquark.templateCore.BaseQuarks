@@ -27,13 +27,8 @@ def create_mysql_connection(pw="root"):
         host="localhost",
         user="root",
         password=pw,
-        port="3666",  # DoQ!
-        # database="downquark_booqstaq", host="3.13.19.89", user="mlnck", password="D0wnQu@rk!", port="3306"
+        port="3666",
     )
-    cntx.set_charset_collation("latin1", "latin1_general_ci")
-    # >> > cnx = mysql.connector.connect(user='scott')
-    # >> > cnx.set_charset_collation('latin1', 'latin1_general_ci')
-    # cntx.set_charset_collation('latin1', 'latin1_general_ci')
     return cntx
 
 
