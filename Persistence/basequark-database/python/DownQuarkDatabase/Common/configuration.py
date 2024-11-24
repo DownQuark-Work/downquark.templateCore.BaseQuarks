@@ -46,6 +46,6 @@ class DownQuarkDatabaseConfiguration:
         k = ""
         update_obj = DB_CONF["CREDENTIALS"]
         for k in key_arr:
-            update_obj = update_obj[k]
+            update_obj = update_obj[k] if k in update_obj else {k: None}
         update_obj = val
         DB_CONF["CREDENTIALS"][k] = update_obj

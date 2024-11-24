@@ -12,11 +12,16 @@ def required_before_run():
     print(
         "what we were looking for to make the demo: https://github.com/swyxio/uuid-list"
     )
-    print("DownQuarkDatabaseConfiguration()", configDqDb.reset())
+    # # configDqDb.reset() # sets back to _all_ databases having localhost connections
+    # # configDqDb.update(['ARANGO'],('bob','dole','a','x')) # sets back to _all_ databases having localhost connections
+
+    configDqDb.clear()
+    configDqDb.update(["ARANGO"], ("root", "root", "localhost", "8529"))
+
     # the `update` usage will vary with different implementations so will most likely need to be
     #  refactored as we determine use cases with the upcoming projects
     # the line below proves it working concept
-    # print("update with non test vals", configDqDb.update(['ARANGO'],('bob','dole','a','x')))
+    # print("update with non test vals", DB_CONF)
     pass
 
 
