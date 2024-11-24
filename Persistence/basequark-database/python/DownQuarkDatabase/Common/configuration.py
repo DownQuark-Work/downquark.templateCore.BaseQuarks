@@ -1,4 +1,7 @@
-"""stores connection and other re-usable information"""
+"""
+stores configuration information in easily accessible scopes and methods
+> this implementation may change as actual integrations are created
+"""
 
 import copy
 
@@ -26,10 +29,12 @@ DB_CONF = copy.deepcopy(DB_CONF_DEFAULT_VALUES)
 
 
 class DownQuarkDatabaseConfiguration:
-    def reset(self):
+    @staticmethod
+    def reset():
         DB_CONF["CREDENTIALS"] = copy.deepcopy(DB_CONF_DEFAULT_VALUES["CREDENTIALS"])
 
-    def run(self):
+    @staticmethod
+    def run():
         print("Configue Database Information")
         print("DB_CONF", DB_CONF)
         pass
