@@ -2,6 +2,7 @@
 
 # from DownQuarkDatabase.Common.configuration import DownQuarkDatabaseConfiguration as configDqDb
 from DownQuarkDatabase.Common import configuration
+from DatabaseTypes.__init__ import InitializeActiveDatabases
 
 configDqDb = configuration.DownQuarkDatabaseConfiguration
 
@@ -17,17 +18,19 @@ def required_before_run():
 
     # clearing and adding only what is needed helps for development
     configDqDb.clear()
-    arangoCredentials = configuration.DB_CONF_DEFAULT_VALUES["CREDENTIALS"].get("MARIA")
-    configDqDb.update(["MARIA"], arangoCredentials)
+    arango_config_credentials = configuration.DB_CONF_DEFAULT_VALUES["CREDENTIALS"].get(
+        "MARIA"
+    )
+    configDqDb.update(["MARIA"], arango_config_credentials)
 
     # the `update` usage will vary with different implementations so will most likely need to be
     #  refactored as we determine use cases with the upcoming projects
     # the line below proves it working concept
     # print("update with non test vals", DB_CONF)
-    pass
+    # pass
 
 
 if __name__ == "__main__":
     required_before_run()
     print("DB_CONFIG_DEFAULT_VALUES", configuration.DB_CONF)
-    # BaseQuark.run()
+    InitializeActiveDatabases()
