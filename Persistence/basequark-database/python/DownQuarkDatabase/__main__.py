@@ -12,11 +12,11 @@ def required_before_run():
     print(
         "what we were looking for to make the demo: https://github.com/swyxio/uuid-list"
     )
-    print("DownQuarkDatabaseConfiguration()", configDqDb().reset())
-    # https://www.uuidgenerator.net/
-    # https://github.com/mdipierro/ulid
-    # https://crates.io/crates/ulid%20%7C%20https://github.com/dylanhart/ulid-rs
-    # https://github.com/lukeed/hexoid
+    print("DownQuarkDatabaseConfiguration()", configDqDb.reset())
+    # the `update` usage will vary with different implementations so will most likely need to be
+    #  refactored as we determine use cases with the upcoming projects
+    # the line below proves it working concept
+    # print("update with non test vals", configDqDb.update(['ARANGO'],('bob','dole','a','x')))
     pass
 
 

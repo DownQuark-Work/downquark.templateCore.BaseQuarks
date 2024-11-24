@@ -52,3 +52,12 @@
    - (fancy way of saying count the roots on the family tree)
 
 > will decide on [structure](https://www.geeksforgeeks.org/difference-between-star-schema-and-snowflake-schema/)/etc as we go
+
+---
+
+> reference
+
+- https://www.uuidgenerator.net/
+  - https://github.com/mdipierro/ulid
+  - https://crates.io/crates/ulid%20%7C%20https://github.com/dylanhart/ulid-rs
+  - https://github.com/lukeed/hexoid

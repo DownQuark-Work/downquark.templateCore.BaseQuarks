@@ -30,11 +30,22 @@ DB_CONF = copy.deepcopy(DB_CONF_DEFAULT_VALUES)
 
 class DownQuarkDatabaseConfiguration:
     @staticmethod
-    def reset():
+    def clear():
+        DB_CONF["CREDENTIALS"] = {}
+
+    @staticmethod
+    def reset():  # `PUT`
         DB_CONF["CREDENTIALS"] = copy.deepcopy(DB_CONF_DEFAULT_VALUES["CREDENTIALS"])
 
     @staticmethod
-    def run():
-        print("Configue Database Information")
-        print("DB_CONF", DB_CONF)
-        pass
+    def update(key_arr, val):  # `PATCH`
+        """
+        This may need a refactor depending on how the data is being set (.env/directly from code/etc
+        Will most likely be updated as we determine use cases within upcoming projects
+        """
+        k = ""
+        update_obj = DB_CONF["CREDENTIALS"]
+        for k in key_arr:
+            update_obj = update_obj[k]
+        update_obj = val
+        DB_CONF["CREDENTIALS"][k] = update_obj
