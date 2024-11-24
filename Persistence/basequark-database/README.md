@@ -1,3 +1,33 @@
+# Overview
+
+## Currently Supported
+
+### Base Languages
+
+1. python
+1. rust
+
+### Database Types
+
+1. postgresql
+1. mariadb
+1. arangodb
+
+### 10'k view
+
+Each _Base Language_ can interact with each _Database Type_.
+The interactions will include only the most basic abilities such as:
+
+1. connecting to the Database
+1. querying the Database
+1. allowing for optional callbacks with any returned data
+
+The code included within this directory is not meant to be much more than an opinionated task library. - And a _very_ light one at that.
+
+# Base Languages
+
+The most simplistic way to see how to implement the languages is to view the code inside each of the nested directories that are applicable to your current implementation's needs.
+
 # Database
 
 ## Start Up
@@ -19,7 +49,7 @@
 1. Postgres
 
 ```
-docker run -p 5432:5432 --name PostgresDq --hostname=c794b66677c8 --mac-address=02:42:ac:11:00:02 --env=POSTGRES_PASSWORD=D0wnQu@rk! --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/17/bin --env=GOSU_VERSION=1.17 --env=LANG=en_US.utf8 --env=PG_MAJOR=17 --env=PG_VERSION=17.0-1.pgdg120+1 --env=PGDATA=/var/lib/postgresql/data --volume=/var/lib/postgresql/data --network=bridge --restart=no --runtime=runc -d postgres:latest
+docker run -p 5432:5432 --name PostgresDq --hostname=c794b66677c8 --mac-address=02:42:ac:11:00:02 --env=POSTGRES_PASSWORD=DownQuarkPostGres --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/17/bin --env=GOSU_VERSION=1.17 --env=LANG=en_US.utf8 --env=PG_MAJOR=17 --env=PG_VERSION=17.0-1.pgdg120+1 --env=PGDATA=/var/lib/postgresql/data --volume=/var/lib/postgresql/data --network=bridge --restart=no --runtime=runc -d postgres:latest
 ```
 
 2. MariaDB
