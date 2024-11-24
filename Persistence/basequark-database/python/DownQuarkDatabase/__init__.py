@@ -12,10 +12,3 @@ This will make use of the following patterns:
 - https://martinfowler.com/eaaCatalog/unitOfWork.html
 - https://deviq.com/design-patterns/repository-pattern
 """
-
-
-class DownQuarkDatabaseConfiguration:
-    @staticmethod
-    def run():
-        print("Configue Database Information")
-        pass
