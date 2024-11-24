@@ -4,7 +4,7 @@ name: DownQuark-Databases
 
 services:
   mariadb:
-    image: mariadb:latest
+    image: mariadb:10.6.19
     restart: always
     environment:
       MYSQL_ROOT_USER: root
