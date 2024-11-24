@@ -22,9 +22,5 @@ def required_before_run():
 
 if __name__ == "__main__":
     required_before_run()
-    configDqDb().run()
-    print("DB_CONFIG_DEFAULT_VALUES", configuration.DB_CONFIG_DEFAULT_VALUES)
-    configuration.DB_CONFIG_DEFAULT_VALUES = {"b": "v"}
-    print("DB_CONFIG_DEFAULT_VALUES", configuration.DB_CONFIG_DEFAULT_VALUES)
-    configDqDb().run()
+    print("DB_CONFIG_DEFAULT_VALUES", configuration.DB_CONF)
     # BaseQuark.run()
