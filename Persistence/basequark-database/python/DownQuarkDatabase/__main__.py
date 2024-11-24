@@ -15,8 +15,10 @@ def required_before_run():
     # # configDqDb.reset() # sets back to _all_ databases having localhost connections
     # # configDqDb.update(['ARANGO'],('bob','dole','a','x')) # sets back to _all_ databases having localhost connections
 
+    # clearing and adding only what is needed helps for development
     configDqDb.clear()
-    configDqDb.update(["ARANGO"], ("root", "root", "localhost", "8529"))
+    arangoCredentials = configuration.DB_CONF_DEFAULT_VALUES["CREDENTIALS"].get("MARIA")
+    configDqDb.update(["MARIA"], arangoCredentials)
 
     # the `update` usage will vary with different implementations so will most likely need to be
     #  refactored as we determine use cases with the upcoming projects
