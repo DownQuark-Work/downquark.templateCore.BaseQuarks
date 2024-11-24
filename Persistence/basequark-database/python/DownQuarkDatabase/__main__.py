@@ -1,6 +1,5 @@
 """DownQuark Database Utilities"""
 
-# from DownQuarkDatabase.Common.configuration import DownQuarkDatabaseConfiguration as configDqDb
 from DownQuarkDatabase.Common import configuration
 from DatabaseTypes.activate import ActiveDatabases
 
@@ -32,5 +31,5 @@ def required_before_run():
 
 if __name__ == "__main__":
     required_before_run()
-    print("DB_CONFIG_DEFAULT_VALUES", configuration.DB_CONF)
-    ActiveDatabases.activate()
+    # print("DB_CONFIG_DEFAULT_VALUES", configuration.DB_CONF)
+    ActiveDatabases().activate()
