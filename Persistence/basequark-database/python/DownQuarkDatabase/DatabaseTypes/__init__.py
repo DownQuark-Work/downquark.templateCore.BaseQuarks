@@ -1,5 +1,1 @@
-"""configures connections and readies interaction for _only_ db types that have been succesfully configured from `../__main__.py`"""
-
-
-class InitializeActiveDatabases:
-    print("InitializeActiveDatabases")
+"""configures connections and readies interaction for _only_ db types that have been successfully configured from `../__main__.py`"""
