@@ -1,6 +1,7 @@
 """DownQuark Database Utilities"""
 
-from .basequark import BaseQuark
+from DownQuarkDatabase.__init__ import DownQuarkDatabaseConfiguration as configDqDb
+# from .basequark import BaseQuark
 
 
 def required_before_run():
@@ -9,6 +10,7 @@ def required_before_run():
     print(
         "what we were looking for to make the demo: https://github.com/swyxio/uuid-list"
     )
+    print("DownQuarkDatabaseConfiguration()", configDqDb.run())
     # https://www.uuidgenerator.net/
     # https://github.com/mdipierro/ulid
     # https://crates.io/crates/ulid%20%7C%20https://github.com/dylanhart/ulid-rs
@@ -18,4 +20,4 @@ def required_before_run():
 
 if __name__ == "__main__":
     required_before_run()
-    BaseQuark.run()
+    # BaseQuark.run()
