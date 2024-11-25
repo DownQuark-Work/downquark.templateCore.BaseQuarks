@@ -12,12 +12,13 @@ def required_before_run():
     print(
         "what we were looking for to make the demo: https://github.com/swyxio/uuid-list"
     )
-    # # configDqDb.reset() # sets back to _all_ databases having localhost connections
+    # # configDqDb.develop() # sets back to _all_ databases having localhost connections
     # # configDqDb.update(['ARANGO'],('bob','dole','a','x')) # sets back to _all_ databases having localhost connections
 
     # clearing and adding only what is needed helps for development
     # TODO: make dynamic when ready
     configDqDb.clear()
+    # POC: `arango_config_credentials` below results in the same configuration as running: `configDqDb.develop()` (without needing to run the `update` method)
     arango_config_credentials = configuration.DB_CONF_DEFAULT_VALUES["CREDENTIALS"].get(
         "MARIA"
     )

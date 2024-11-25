@@ -34,7 +34,7 @@ class DownQuarkDatabaseConfiguration:
         DB_CONF["CREDENTIALS"] = {}
 
     @staticmethod
-    def reset():  # `PUT`
+    def develop():  # `PUT`
         DB_CONF["CREDENTIALS"] = copy.deepcopy(DB_CONF_DEFAULT_VALUES["CREDENTIALS"])
 
     @staticmethod

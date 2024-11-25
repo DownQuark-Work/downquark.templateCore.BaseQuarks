@@ -1,4 +1,4 @@
-"""Instantiate Successfully Configured Databases"""
+"""DEVELOPMENT STUB FILE: DELETE when no longer needed"""
 
 from DownQuarkDatabase.Common import configuration
 from DownQuarkDatabase.Databases.MariaDB import relationaldb
