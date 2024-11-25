@@ -47,6 +47,10 @@ def init_args():
 
     # non_development_mode
     non_development_mode.add_argument(
+        "--Dev", type=bool, default=None, help=argparse.SUPPRESS
+    )  # prevent non-dev from seeing this via help menu
+
+    non_development_mode.add_argument(
         "query_file",
         nargs="?",
         type=argparse.FileType("r"),
