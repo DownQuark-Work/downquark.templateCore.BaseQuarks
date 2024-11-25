@@ -1,7 +1,7 @@
 """Instantiate Successfully Configured Databases"""
 
 from DownQuarkDatabase.Common import configuration
-from DownQuarkDatabase.DatabaseTypes.MariaDB import relationaldb
+from DownQuarkDatabase.Databases.MariaDB import relationaldb
 
 
 class ActiveDatabases:
@@ -10,6 +10,8 @@ class ActiveDatabases:
         print("configuration.DB_CONF", configuration.DB_CONF)
         relationaldb.print_dbs()
 
-    def activate(self):
+    @classmethod
+    def activate(cls):
         print("initialize_active_databases")
-        self.determine_active_dbs()
+        # class method for potential future scalability
+        cls.determine_active_dbs()

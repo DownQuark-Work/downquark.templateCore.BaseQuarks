@@ -1,7 +1,7 @@
 """DownQuark Database Utilities"""
 
 from DownQuarkDatabase.Common import configuration
-from DatabaseTypes.activate import ActiveDatabases
+from Databases.activate import ActiveDatabases
 
 configDqDb = configuration.DownQuarkDatabaseConfiguration
 
@@ -16,6 +16,7 @@ def required_before_run():
     # # configDqDb.update(['ARANGO'],('bob','dole','a','x')) # sets back to _all_ databases having localhost connections
 
     # clearing and adding only what is needed helps for development
+    # TODO: make dynamic when ready
     configDqDb.clear()
     arango_config_credentials = configuration.DB_CONF_DEFAULT_VALUES["CREDENTIALS"].get(
         "MARIA"
@@ -27,9 +28,11 @@ def required_before_run():
     # the line below proves it working concept
     # print("update with non test vals", DB_CONF)
     # pass
+    ActiveDatabases.activate()
 
 
 if __name__ == "__main__":
     required_before_run()
     # print("DB_CONFIG_DEFAULT_VALUES", configuration.DB_CONF)
-    ActiveDatabases().activate()
+
+# https://github.com/faif/python-patterns/blob/master/patterns/behavioral/catalog.py

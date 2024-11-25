@@ -50,6 +50,8 @@ def no_print_db():
 
 def print_dbs():
     dyn_connect_cursor()
+    # database_connection_cursor[1].execute("CREATE DATABASE mydatabase")
+    # database_connection_cursor[1].execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")
     database_connection_cursor[1].execute("SHOW SCHEMAS")
     for db in database_connection_cursor[1]:
         print(db)
