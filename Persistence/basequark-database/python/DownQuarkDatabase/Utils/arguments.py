@@ -26,11 +26,9 @@ def init_args():
     parser.add_argument(
         "-c",
         "--credentials",
-        # nargs="?",
-        # action="extend",
         type=str,
         help="Credentials used when connecting to the db-type. Not all values may be required. Expected in the order of: [user, password, host, port]",
-        metavar=('"admin_user secret_pw 127.0.0.1 1342"'),
+        metavar='"admin_user secret_pw 127.0.0.1 1342"',
     )
 
     subparsers = parser.add_subparsers(
@@ -47,26 +45,24 @@ def init_args():
 
     # non_development_mode
     non_development_mode.add_argument(
-        "--Dev", type=bool, default=None, help=argparse.SUPPRESS
-    )  # prevent non-dev from seeing this via help menu
-
-    non_development_mode.add_argument(
-        "query_file",
-        nargs="?",
+        "-f",
+        "--file",
         type=argparse.FileType("r"),
-        default=sys.stdin,
+        # default=sys.stdin,
         help="optional file to use for source of db-type queries",
     )
 
     non_development_mode.add_argument(
-        "-q",
-        "--query",
+        "query_strings",
         action="extend",
         nargs="+",
         type=str,
         help="space separated list of strings to be queried by db-type. They will run sequentially",
         metavar=('"SELECT * FROM ...."', '"INSERT INTO ...."'),
     )
+    non_development_mode.add_argument(
+        "-D", "--Dev", action="store_true", help=argparse.SUPPRESS
+    )  # prevent non-dev from seeing this via help menu
 
     # development_mode
     development_mode.add_argument(
