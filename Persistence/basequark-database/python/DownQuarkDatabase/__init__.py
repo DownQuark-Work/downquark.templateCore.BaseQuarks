@@ -12,3 +12,5 @@ The POC implementation (outside of scope for this current work) may need to incl
 - https://martinfowler.com/eaaCatalog/unitOfWork.html
 - https://deviq.com/design-patterns/repository-pattern
 """
+
+# currently running it with: `MARIA do query "Query One" "Query Two" "I am frog man!" -D` for development

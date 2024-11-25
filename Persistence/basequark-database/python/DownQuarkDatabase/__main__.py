@@ -8,10 +8,19 @@ configDqDb = configuration.DownQuarkDatabaseConfiguration
 
 
 def required_before_run():
+    # currently running it with: `MARIA do query "Query One" "Query Two" "I am frog man!" -D` for development
+
     # translate CLI args (if exist) to variables for use with module initializing
-    cli_args.init_args()
+    cli_conf_values = cli_args.init_args()
     # sanity check to remove any leftover cached values [should never be needed]
     configDqDb.clear()
+
+    print("cli_conf_values", cli_conf_values)
+    print("appy cli_conf_values to configuration")
+    print("use catalog to verify authentication from configuration")
+    print("then you are already in the catalog world, so finish up the query-ing")
+    print("that will probably be the easiest part with the groundwork in place.")
+
     # """Initializes and verifies connections to specified database"""
     # print("all required data has been retrieved, parsed, and handled")
     # print(

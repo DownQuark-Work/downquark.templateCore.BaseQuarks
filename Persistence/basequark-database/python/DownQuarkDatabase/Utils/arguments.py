@@ -77,18 +77,19 @@ def init_args():
         help="A mock implementation of what would be returned after all queries and processing had completed. No database call or connection will actually occur. Only available in development mode",
         metavar='{ "query_response" : "mock_data" : {} }',
     )
-    # parser.print_help()
+    parser.print_help()
     non_development_mode.print_help()
-    # development_mode.print_help()
+    development_mode.print_help()
     #
-    # parser.print_usage()
+    parser.print_usage()
     non_development_mode.print_usage()
-    # development_mode.print_usage()
+    development_mode.print_usage()
 
     args = parser.parse_args()
 
     # for arg in args:
     print("->", args)
+    return args
 
 
 # https://docs.python.org/3/library/argparse.html
