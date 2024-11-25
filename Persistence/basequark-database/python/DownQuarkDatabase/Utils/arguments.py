@@ -16,13 +16,6 @@ def init_args():
         help="Data Persists to DataBase of this type",
     )
     parser.add_argument(
-        "query_file",
-        nargs="?",
-        type=argparse.FileType("r"),
-        default=sys.stdin,
-        help="optional file to use for source of db-type queries",
-    )
-    parser.add_argument(
         "callback_location",
         nargs="?",
         type=argparse.FileType("w"),
@@ -31,13 +24,37 @@ def init_args():
         help="the cli currently only supports writing the response to the command line",
     )
     parser.add_argument(
-        "-c,--credentials",
-        nargs="*",
+        "-c",
+        "--credentials",
+        # nargs="?",
+        # action="extend",
         type=str,
         help="Credentials used when connecting to the db-type. Not all values may be required. Expected in the order of: [user, password, host, port]",
-        metavar=("admin_user", " secret_pw 127.0.0.1 1342"),
+        metavar=('"admin_user secret_pw 127.0.0.1 1342"'),
     )
-    parser.add_argument(
+
+    subparsers = parser.add_subparsers(
+        help="content handling for (non-)?development mode"
+    )
+    non_development_mode = subparsers.add_parser(
+        "query", help="defines queries to run on db_type"
+    )
+    development_mode = subparsers.add_parser(
+        "mock",
+        help="specifies mock process data for development.",
+        description='Example Usage: `% __main__.py MARIA -c "bobby paswurd loqalhost 1313" mock -p "{cool value: bro}"`',
+    )
+
+    # non_development_mode
+    non_development_mode.add_argument(
+        "query_file",
+        nargs="?",
+        type=argparse.FileType("r"),
+        default=sys.stdin,
+        help="optional file to use for source of db-type queries",
+    )
+
+    non_development_mode.add_argument(
         "-q",
         "--query",
         action="extend",
@@ -46,18 +63,26 @@ def init_args():
         help="space separated list of strings to be queried by db-type. They will run sequentially",
         metavar=('"SELECT * FROM ...."', '"INSERT INTO ...."'),
     )
-    parser.add_argument(
-        "-D", "--DEV", action="store_true", help="Enables development mode"
+
+    # development_mode
+    development_mode.add_argument(
+        "--Dev", action="store_const", const=True, default=True, help=argparse.SUPPRESS
     )
-    parser.add_argument(
-        "-m",
-        "--mock",
+    development_mode.add_argument(
+        "-p",
+        "--process",
         type=str,
         help="A mock implementation of what would be returned after all queries and processing had completed. No database call or connection will actually occur. Only available in development mode",
         metavar='{ "query_response" : "mock_data" : {} }',
     )
     # parser.print_help()
+    # non_development_mode.print_help()
+    # development_mode.print_help()
+
     # parser.print_usage()
+    # non_development_mode.print_usage()
+    # development_mode.print_usage()
+
     args = parser.parse_args()
 
     # for arg in args:
