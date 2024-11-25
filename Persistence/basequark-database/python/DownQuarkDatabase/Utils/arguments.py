@@ -58,7 +58,7 @@ def init_args():
         nargs="+",
         type=str,
         help="space separated list of strings to be queried by db-type. They will run sequentially",
-        metavar=('"SELECT * FROM ...."', '"INSERT INTO ...."'),
+        metavar='"SELECT * FROM ...." "INSERT INTO ...."',
     )
     non_development_mode.add_argument(
         "-D", "--Dev", action="store_true", help=argparse.SUPPRESS
@@ -78,7 +78,7 @@ def init_args():
     # parser.print_help()
     # non_development_mode.print_help()
     # development_mode.print_help()
-
+    #
     # parser.print_usage()
     # non_development_mode.print_usage()
     # development_mode.print_usage()
