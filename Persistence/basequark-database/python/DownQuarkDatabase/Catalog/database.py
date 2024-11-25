@@ -14,7 +14,10 @@ class DatabaseCatalog:
 
     # REMEMBER: any sort of customized logic is out of scope for this implementation
     # -- `query("INSERT INTO...").MUTATING_RESULTS_IS_OUT_OF_SCOPE().query("SELECT * FROM...").process()
-    # ---- the query chain could be useful for short-handing multiple `input` statements before returning the un-mutated results of an aggregated `select` statement to be `process`ed.
+    # ---- any number of queries with any type of restult values can be chained, but this implementation runs them all in isolation.
+    # ---- this results in:
+    # ------ _only_ the value of the **final** query being passed to`process`
+    # ------ _no_ query will have any knowledge of the result from the previous query
     # -- `process(); ANYTHING_ELSE_AFTERWARDS_IS_OUT_OF_SCOPE()
     # ---- `process` executes a single callback function (if exists) - and that is it.
     # ---- Any additional pipeline logic related to CQRS/event-sourcing/aggregations/etc (iterations, pub/sub, queue) is handled downstream and would require a new instance of this persistence module.
