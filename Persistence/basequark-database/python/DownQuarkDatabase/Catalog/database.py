@@ -9,12 +9,12 @@ class DatabaseCatalog:
     # -- optional mock data can be passed as an argument which will be returned exactly as the database query result would be from the `process` method
     # def query: # applies the query string to the desired database and returns the results to the `process` function
     # -- should probably be chainable: `query("INSERT INTO...").query("SELECT * FROM...").process()`
-    # ---- https://github.com/faif/python-patterns/blob/master/patterns/behavioral/chaining_method.py
+    # ---- https://github.com/faif/python-patterns/blob/master/patterns/behavioral/chaining_method.py <- would need to be implemented in each `Databases/*`
     # def process: # will format the output from the query, then run the callback function (if exists) passing the formatted result(s) as `*args`
 
     # REMEMBER: any sort of customized logic is out of scope for this implementation
     # -- `query("INSERT INTO...").MUTATING_RESULTS_IS_OUT_OF_SCOPE().query("SELECT * FROM...").process()
-    # ---- any number of queries with any type of restult values can be chained, but this implementation runs them all in isolation.
+    # ---- any number of queries with any type of result values can be chained, but this implementation runs them all in isolation.
     # ---- this results in:
     # ------ _only_ the value of the **final** query being passed to`process`
     # ------ _no_ query will have any knowledge of the result from the previous query
