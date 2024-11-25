@@ -1,5 +1,6 @@
 """DownQuark Database Utilities"""
 
+from DownQuarkDatabase.Utils import arguments as cli_args
 from DownQuarkDatabase.Common import configuration
 # from Databases.activate import ActiveDatabases
 
@@ -7,7 +8,9 @@ configDqDb = configuration.DownQuarkDatabaseConfiguration
 
 
 def required_before_run():
-    """sanity check to remove any leftover cached values [should never be needed]"""
+    # translate CLI args (if exist) to variables for use with module initializing
+    cli_args.init_args()
+    # sanity check to remove any leftover cached values [should never be needed]
     configDqDb.clear()
     # """Initializes and verifies connections to specified database"""
     # print("all required data has been retrieved, parsed, and handled")
