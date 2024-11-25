@@ -16,14 +16,14 @@ def init_args():
         help="Data Persists to DataBase of this type",
     )
     parser.add_argument(
-        "query-file",
+        "query_file",
         nargs="?",
         type=argparse.FileType("r"),
         default=sys.stdin,
         help="optional file to use for source of db-type queries",
     )
     parser.add_argument(
-        "callback-location",
+        "callback_location",
         nargs="?",
         type=argparse.FileType("w"),
         const=sys.stdout,
@@ -56,7 +56,7 @@ def init_args():
         help="A mock implementation of what would be returned after all queries and processing had completed. No database call or connection will actually occur. Only available in development mode",
         metavar='{ "query_response" : "mock_data" : {} }',
     )
-    parser.print_help()
+    # parser.print_help()
     # parser.print_usage()
     args = parser.parse_args()
 
