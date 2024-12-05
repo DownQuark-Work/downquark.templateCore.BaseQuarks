@@ -13,4 +13,4 @@ The POC implementation (outside of scope for this current work) may need to incl
 - https://deviq.com/design-patterns/repository-pattern
 """
 
-# currently running it with: `MARIA do query "Query One" "Query Two" "I am frog man!" -D` for development
+# currently running it with: `MARIA query "Query One" "Query Two" "I am frog man!" -D` for development

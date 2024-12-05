@@ -16,7 +16,7 @@ def required_before_run():
     configDqDb.clear()
 
     print("cli_conf_values", cli_conf_values)
-    print("appy cli_conf_values to configuration")
+    print("apply cli_conf_values to configuration")
     print("use catalog to verify authentication from configuration")
     print("then you are already in the catalog world, so finish up the query-ing")
     print("that will probably be the easiest part with the groundwork in place.")

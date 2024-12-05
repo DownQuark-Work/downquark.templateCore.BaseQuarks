@@ -1,7 +1,7 @@
 """parses arguments from the command line to allow idempotence between the CLI and module implementations"""
 
 import argparse
-import sys
+# import sys
 
 from DownQuarkDatabase.Common.constants import DB_TYPES
 
@@ -15,14 +15,15 @@ def init_args():
         type=str,
         help="Data Persists to DataBase of this type",
     )
-    parser.add_argument(
-        "callback_location",
-        nargs="?",
-        type=argparse.FileType("w"),
-        const=sys.stdout,
-        default=sys.stdout,
-        help="the cli currently only supports writing the response to the command line",
-    )
+    # Currentlyu this will _always_ be out of scope .. but keeping in case a future implementation use case presents itself
+    # parser.add_argument(
+    #     "callback_location",
+    #     nargs="?",
+    #     type=argparse.FileType("w"),
+    #     const=sys.stdout,
+    #     default=sys.stdout,
+    #     help="the cli currently only supports writing the response to the command line",
+    # )
     parser.add_argument(
         "-c",
         "--credentials",
