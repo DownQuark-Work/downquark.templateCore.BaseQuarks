@@ -1,4 +1,12 @@
-# POC
+# TODO: dupe template for MockMyDB
+
+> This file is related to that applicaiton only
+>
+> > would be beneficial to have the Python Persistence utils in place before cloning the template.
+>
+> remove file form BaseQuark template repo when the above has occured.
+
+## POC
 
 > Virtual TCG
 
@@ -42,3 +50,14 @@
 5. a `boolean` column (or star schema or whatever) will list whether the cards are capable of _entwining_ (no other data is necessary)
 6. and maybe just for fun a column that lists how many total "_descendants_" the card's \_entwining_s have been responsible for creating
    - (fancy way of saying count the roots on the family tree)
+
+> will decide on [structure](https://www.geeksforgeeks.org/difference-between-star-schema-and-snowflake-schema/)/etc as we go
+
+---
+
+> reference
+
+- https://www.uuidgenerator.net/
+  - https://github.com/mdipierro/ulid
+  - https://crates.io/crates/ulid%20%7C%20https://github.com/dylanhart/ulid-rs
+  - https://github.com/lukeed/hexoid
