@@ -1,4 +1,4 @@
-# Development Qonsole
+# Tauri Template
 
 > A dq build
 
@@ -22,18 +22,8 @@ For iOS development, run:
 
 ## WIP
 
-The first implementation will be created simultaneously with the [Qanban Board](//github.com/DownQuark-Work/downquark.applicationFoss.QanbanBoard).
+> Below are _TODOs_ as time permits
 
-This will ensure that all customizable aspects required to make the Development Qonsole a success will be working correctly.
+1. The `/src-tauri/downquark/devqon` directory should be replaced with:
 
-This may be helpful when it is time to implement the board:
-
-- https://tauri.app/v1/guides/building/resources
-  And from this directory:
-- `% cargo tree --manifest-path basequark/src-tauri/Cargo.toml`
-
-<details><summary><u><i>rough</i></u>dashboard editor concept</summary>
-<img width="1048" alt="Screenshot 2023-12-22 at 02 14 51" src="https://github.com/DownQuark-Work/downquark.applicationFoss.BaseQuark/assets/40064794/645c2d8e-2553-45bd-a7ac-30c7bb9e7fa8">
-</details>
-
-https://wireframe.cc/eEzsrw
+- `/src-tauri/downquark/<PROJECT_NAME>`

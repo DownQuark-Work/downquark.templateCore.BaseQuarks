@@ -1,2 +1,2 @@
-[basequark.logging]
-output = ['basequark.directory.home','.logs']
+[devqon.logging]
+output = ['devqon.directory.home','.logs']
